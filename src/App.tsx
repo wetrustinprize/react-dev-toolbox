@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
-function App() {
+import './App.css'
+import ReactDevToolbox, { ToolboxButton, ToolboxIncDec } from './react-dev-toolbox';
+
+const App: React.FC = () => {
+  const [coins, setCoins] = useState<number>(0)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+      <h1>React Dev Toolbox</h1>
+      <h2>Boilerplate</h2>
+
+      <ReactDevToolbox
+        title='Main Page'
+      >
+        <h1>Coins</h1>
+        <ToolboxIncDec
+          value={coins}
+          setValue={setCoins}
+        />
+        <ToolboxButton
+          label='Reset coins'
+          onClick={() => { setCoins(0) }}
+          disabled={coins === 0}
+        />
+      </ReactDevToolbox>
     </div>
-  );
+  )
 }
 
 export default App;

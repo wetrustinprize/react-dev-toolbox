@@ -1,0 +1,37 @@
+button.toolButton {
+    border: 2px solid #ECEFF4;
+    border-radius: 8px;
+
+    background-color: transparent;
+
+    padding: 4px 6px;
+
+    color: #ECEFF4;
+    font-weight: bold;
+
+    &:hover:not(:disabled) {
+        color: #D8DEE9;
+        border-color: #D8DEE9;
+    }
+
+    &:disabled {
+        color: #4C566A;
+        border-color: #4C566A;
+    }
+
+    transition: all 0.2s;
+}
+
+p.value {
+    color: #ECEFF4;
+    font-size: 16px;
+}
+
+div.row {
+    width: max-content;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 4px;
+}
